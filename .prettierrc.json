@@ -1,0 +1,31 @@
+{
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "printWidth": 90,
+    "proseWrap": "always",
+    "quoteProps": "as-needed",
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "endOfLine": "lf",
+    "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+    "tailwindStylesheet": "./src/index.css",
+    "importOrder": [
+      "^(react/(.*)$)|^(react$)",
+      "",
+      "^types$",
+      "^@/types/(.*)$",
+      "^@/configs/(.*)$",
+      "^@/lib/(.*)$",
+      "^@/utils/(.*)$",
+      "^@/actions/(.*)$",
+      "^@/hooks/(.*)$",
+      "^@/components/ui/(.*)$",
+      "^@/components/(.*)$",
+      "^@/assets/(.*)$",
+      "",
+      "^[./]"
+    ],
+    "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"]
+  }

@@ -1,12 +1,14 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routes";
-import { Toaster } from "sonner";
-import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from 'react-helmet-async'
+import { RouterProvider } from 'react-router-dom'
+import { Toaster } from 'sonner'
+
+import { router } from './routes'
+
 export function App() {
   return (
     <HelmetProvider>
       <Toaster richColors closeButton />
       <RouterProvider router={router}></RouterProvider>
     </HelmetProvider>
-  );
+  )
 }
