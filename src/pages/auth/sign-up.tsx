@@ -1,3 +1,5 @@
+import { registerRestaurant } from '@/api/register-restaurant'
+import { useMutation } from '@tanstack/react-query'
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
@@ -26,13 +28,23 @@ export function SignUp() {
     formState: { isSubmitting },
   } = useForm<SignUpForm>()
 
+  const { mutateAsync: registerRestaurantFn } = useMutation({
+    mutationFn: registerRestaurant,
+  })
+
   async function handleSignUp(data: SignUpForm) {
+    console.log(data)
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      await registerRestaurantFn({
+        restaurantName: data.restaurantName,
+        managerName: data.managerName,
+        email: data.email,
+        phone: data.phone,
+      })
       toast.success('Restaurante cadastrado com sucesso.', {
         action: {
           label: 'Login',
-          onClick: () => navigate('/sign-in'),
+          onClick: () => navigate(`/sign-in?email=${data.email}`),
         },
       })
     } catch (error) {
@@ -64,14 +76,17 @@ export function SignUp() {
               <Label htmlFor="restaurantName">Nome do estabelecimento</Label>
               <Input id="restaurantName" type="text" {...register('restaurantName')} />
             </div>
+
             <div className="space-y-2">
               <Label htmlFor="managerName">Seu nome</Label>
               <Input id="managerName" type="text" {...register('managerName')} />
             </div>
+
             <div className="space-y-2">
               <Label htmlFor="email">Seu e-mail</Label>
               <Input id="email" type="email" {...register('email')} />
             </div>
+
             <div className="space-y-2">
               <Label htmlFor="phone">Seu telefone</Label>
               <Input id="phone" type="tel" {...register('phone')} />
