@@ -42,7 +42,7 @@ export function SignIn() {
           },
         },
       })
-    } catch (error) {
+    } catch {
       toast.error('Credenciais inválidas')
     }
   }

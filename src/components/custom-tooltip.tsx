@@ -1,16 +1,3 @@
-// interface PayloadProps {
-//   value: string
-// }
-
-// interface TooltipProps {
-//   payload: PayloadProps[]
-//   label: string
-//   active: boolean
-// }
-
-// interface CustomTooltipProps{
-//     data:TooltipProps[]
-// }
 export function CustomTooltip({ active, payload, label }: any) {
   if (active) {
     return (
