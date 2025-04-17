@@ -3,6 +3,7 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   test: {
    globals:true,
-   setupFiles:['./test/setups.ts']
+   setupFiles:['./test/setups.ts'],
+   environment: 'happy-dom'
   },
 })
