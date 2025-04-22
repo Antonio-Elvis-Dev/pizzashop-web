@@ -17,7 +17,7 @@ const signUpZod = z.object({
   phone: z.string(),
 })
 
-type SignUpForm = z.infer<typeof signUpZod>
+export type SignUpForm = z.infer<typeof signUpZod>
 
 export function SignUp() {
   const navigate = useNavigate()
@@ -41,7 +41,7 @@ export function SignUp() {
         email: data.email,
         phone: data.phone,
       })
-      toast.success('Restaurante cadastrado com sucesso.', {
+      toast.success('Restaurante cadastrado com sucesso', {
         action: {
           label: 'Login',
           onClick: () => navigate(`/sign-in?email=${data.email}`),

@@ -88,7 +88,7 @@ export function StoreProfileDialog() {
       })
       toast.success('Perfil atualizado com sucesso')
     } catch {
-      toast.error('Falha ao atualizar o perfl, tente novamente.')
+      toast.error('Falha ao atualizar o perfl, tente novamente')
     }
   }
 

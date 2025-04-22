@@ -9,7 +9,7 @@ import { MetricCardSkeleton } from './metric-card-skeleton'
 export function MonthRevenueCard() {
   const { data: monthRevenue } = useQuery({
     queryFn: getMonthRevenue,
-    queryKey: ['metrics', 'month-canceled-orders-amount'],
+    queryKey: ['metrics', '/month-receipt'],
   })
   return (
     <Card className="overflow-auto">

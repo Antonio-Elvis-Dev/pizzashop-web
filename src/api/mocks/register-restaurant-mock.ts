@@ -6,7 +6,7 @@ export const registerRestaurantMock = http.post<never, RegisterRestaurantBody>(
   '/restaurants',
   async ({ request }) => {
     const { restaurantName } = await request.json()
-    if (restaurantName === 'Teste') {
+    if (restaurantName === 'Pizza Shop') {
       return new HttpResponse(null, { status: 201 })
     }
 
